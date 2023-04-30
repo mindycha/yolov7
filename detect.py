@@ -15,8 +15,8 @@ from utils.plots import plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized, TracedModel
 import openpyxl #needed for excel data write
 
-#needed for excel data write
-workbook_name = "C:/Users/mindy/yolov7env/Scripts/yolov7/data.xlsx"
+# Opens existing excel file
+workbook_name = "path to excel file" #modify
 wb = openpyxl.load_workbook(workbook_name)
 ws = wb['Sheet1']
 ws = wb.active
@@ -190,7 +190,7 @@ def detect(save_img=False):
 
     print(f'Done. ({time.time() - t0:.3f}s)')
 
-    #needed for excel data write
+    # Writes data to the excel file
     for info in new_data:
         ws.append(info)
 
